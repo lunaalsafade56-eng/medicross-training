@@ -1,0 +1,58 @@
+
+import React from "react";
+import Slider from "../../components/common/Slider";
+import AppointmentForm from "../../features/appointments/components/AppointmentForm";
+import ServiceDepartment from "../home/sections/ServiceDepartment"
+import { homeContents } from "../../../src/data/contents/HomeContents";
+import {FaStar} from "react-icons/fa";
+import FindDoctor from "../home/sections/FindDoctor";
+
+const Home: React.FC = () => {
+  return (
+    <>
+      <div className="bg-[#0a263f] ">
+        <Slider
+          slides={homeContents.slides}
+          renderSlide={(slide) => (
+            <div className="w-full  flex flex-col md:flex-row  items-center ">
+              <div className="w-300 flex flex-col md:w-1/2 justify-center items-center px-2 h-full text-left mb-4">
+                <h1 className="text-xl md:text-6xl font-bold mb-6 drop-shadow-2xl text-white ">
+                  {slide.title}
+                </h1>
+                <p className="text-lg md:text-4xl mb-8 text-gray-200 max-w-2xl  ">
+                  {slide.subtitle}
+                </p>
+                <p className="text-lg md:text-2xl mb-8 text-gray-200 max-w-2xl   ">
+                  {slide.text}
+                </p>
+                <button className="bg-yellow-500  hover:bg-yellow-600 text-gray-950 px-8 py-4 rounded-full text-lg font-semibold  transition-all duration-300 hover:scale-105">
+                  <span>View All Services</span>
+                </button>
+              </div>
+              <div className="w-full h-full md:w-1/2 bg-cover bg-center bg-no-repeat   ">
+                <img
+                  src={slide.img}
+                  alt=""
+                  className="w-300 h-150 md:h-[500px] object-cover rounded-3xl  overflow-hidden shadow-lg "
+                />
+              </div>
+            </div>
+          )}
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-2">
+          <FindDoctor />
+          <AppointmentForm />
+        </div>
+        
+          <h2 className="flex justify-center text-center m-auto p-3 text-white">
+            Our patients say: Excellent <FaStar className="text-[#ffcc53] mt-1 mx-1"/> <FaStar className="text-[#ffcc53] mt-1"/><FaStar className="text-[#ffcc53] mt-1"/><FaStar className="text-[#ffcc53] mt-1"/><FaStar className="text-[#ffcc53] mt-1 mx-1"/> Overall Rating 4.7 / 3285 reviews on Zocdoc 
+          </h2>
+        
+      </div>
+      <ServiceDepartment/>
+  
+    </>
+  );
+};
+
+export default Home;
