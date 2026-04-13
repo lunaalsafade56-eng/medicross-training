@@ -1,157 +1,10 @@
-// import logo2 from "../../../assets/images/Screenshot 2026-04-06 195113.png";
-// import React, { useState} from "react";
-// import {
-//   FiArrowLeft,
-//   FiArrowRight,
-//   FiPlay,
-//   FiUsers,
-//   FiClock,
-//   FiAward,
-// } from "react-icons/fi";
-// interface SliderCard {
-//   id: number;
-//   icon: React.ReactNode;
-//   number: string;
-//   title: string;
-//   description: string;
-// }
-// function ServiceDepartment() {
-
-//   const [startIndex, setStartIndex] = useState<number>(0);
-
-//   // دالة للانتقال إلى الكاردات التالية
-//   const handleNextClick = () => {
-//     setStartIndex((prevIndex) => (prevIndex + 1) % sliderCards.length);
-//   };
-
-//   // دالة للرجوع إلى الكاردات السابقة
-//   const handlePrevClick = () => {
-//     setStartIndex((prevIndex) =>
-//       prevIndex - 1 < 0 ? sliderCards.length - 1 : prevIndex - 1
-//     );
-//   };
-
-//   // تحديد الكاردات المعروضة بناءً على startIndex
-//   const displayedCards = [
-//     sliderCards[(startIndex) % sliderCards.length],
-//     sliderCards[(startIndex + 1) % sliderCards.length],
-//     sliderCards[(startIndex + 2) % sliderCards.length],
-//   ];
-
-
-//   const sliderCards: SliderCard[] = [
-//     {
-//       id: 1,
-//       icon: <FiUsers className="w-12 h-12" />,
-//       number: "01",
-//       title: "Dental Care",
-//       description:
-//         " Medicenter offers comprehensive dental care for both adults and children from our office at Toronto. ",
-//     },
-//     {
-//       id: 2,
-//       icon: <FiPlay className="w-12 h-12" />,
-//       number: "02",
-//       title: "Pharmacology",
-//       description:
-//         " Medicenter offers comprehensive dental care for both adults and children from our office at Toronto. ",
-//     },
-//     {
-//       id: 3,
-//       icon: <FiClock className="w-12 h-12" />,
-//       number: "03",
-//       title: "Orthopedics",
-//       description:
-//         " Medicenter offers comprehensive dental care for both adults and children from our office at Toronto. ",
-//     },
-//     {
-//       id: 4,
-//       icon: <FiAward className="w-12 h-12" />,
-//       number: "04",
-//       title: "Hematology",
-//       description:
-//         " Medicenter offers comprehensive dental care for both adults and children from our office at Toronto. ",
-//     },
-//     {
-//       id: 5,
-//       icon: <FiUsers className="w-12 h-12" />,
-//       number: "05",
-//       title: "Neurology",
-//       description:
-//         " Medicenter offers comprehensive dental care for both adults and children from our office at Toronto. ",
-//     },
-//     {
-//       id: 6,
-//       icon: <FiPlay className="w-12 h-12" />,
-//       number: "06",
-//       title: "Cardiomyopathy",
-//       description:
-//         " Medicenter offers comprehensive dental care for both adults and children from our office at Toronto. ",
-//     },
-//   ];
-//   //   const goToSlide =
-//   //     ((slideIndex: number) => {
-//   //       setCurrentSlide(slideIndex);
-//   //     },
-//   //     []);
-
-
-//   return (
-//     <div>
-//       <div className="text-center p-3 ">
-//         <img src={logo2} alt="" className="w-10 m-auto " />
-//         <p>We Provide the Best Service for your Health </p>
-//         <h1 className="text-xl md:text-3xl font-bold">
-//           Our Practice Areas and Expertise
-//         </h1>
-//         <p>
-//           The healthcare arena there was a felt need of developing new as well
-//           as upgrading the existing functioning and processes.
-//         </p>
-//       </div>
-
-//      <div className="p-6">
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//         {displayedCards.map((SliderCard) => (
-//           <div
-//             key={SliderCard.id}
-//             className="bg-white border border-gray-200 p-4 rounded-lg shadow-lg"
-//           >
-//             <h3 className="text-xl font-semibold">{SliderCard.title}</h3>
-//             <p className="text-gray-600 mt-2">{SliderCard.description}</p>
-//           </div>
-//         ))}
-//       </div>
-//       <div className="mt-6 flex justify-between">
-//         {/* زر العودة */}
-//         <button
-//           onClick={handlePrevClick}
-//           className="px-4 py-2 bg-gray-500 text-white rounded-lg"
-//         >
-//           <FiArrowLeft/>
-//         </button>
-
-//         {/* زر التقدم */}
-//         <button
-//           onClick={handleNextClick}
-//           className="px-4 py-2 bg-blue-500 text-white rounded-lg"
-//         >
-//          <FiArrowRight/>
-//         </button>
-//       </div>
-//     </div>
-//     </div>
-//   );
-// }
-
-// export default ServiceDepartment;
 import Service1 from "../../../assets/images/Service1.png"
 import Service2 from "../../../assets/images/Service2.png"
 import Service3 from "../../../assets/images/Service3.png"
 import Service4 from "../../../assets/images/Service4.png"
 import Service5 from "../../../assets/images/Service5.png"
 import Service6 from "../../../assets/images/Service6.png"
-import logo2 from "../../../assets/images/Screenshot 2026-04-06 195113.png";
+import logo2 from "../../../assets/images/ic2.png";
 import React, { useState } from 'react';
 import {
   FiArrowLeft,
@@ -243,7 +96,7 @@ const App: React.FC = () => {
   return (
     <div>
     <div className="text-center pt-20 ">
-         <img src={logo2} alt="" className="w-10 m-auto pb-4" />
+         <img src={logo2} alt="" className="w-10 m-auto pb-4 " />
          <p className="text-lg w-50 m-auto">We Provide the Best Service for your Health </p>
          <h1 className="text-2xl md:text-6xl pt-5  pb-5 text-gray-950">
            Our Practice Areas and Expertise

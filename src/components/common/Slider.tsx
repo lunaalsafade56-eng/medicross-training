@@ -30,24 +30,23 @@ const Slider: React.FC<SliderProps> = ({ renderSlide, slides }) => {
     <div className="relative min-h-screen bg-[#0a263f] flex items-center justify-center overflow-hidden px-3 sm:px-6 lg:px-12 xl:px-16 py-20 lg:py-32">
       
         {/* Prev Button */}
-        <div className="mt-30 sm:block grid grid-cols-2 gap-4 md:block hidden">
-          <div>
+        <div className="mt-12 sm:block grid grid-cols-2 gap-7 md:block hidden">
+          
           <button
             onClick={prevSlide}
-            className="w-20 h-20 rounded-full p-0 bg-white/10 backdrop-blur-xl hover:bg-yellow-600   shadow-xl"
+            className="w-20 h-20 rounded-full mb-4 p-0 bg-white/10 backdrop-blur-xl hover:bg-yellow-200  shadow-xl"
           >
             <FaArrowLeft className="w-5 h-5 flex  justify-center m-auto text-gray-500" />
           </button>
-</div>
           {/* Next Button */}
-          <div>
+          
           <button
             onClick={nextSlide}
-            className="w-20 h-20  rounded-full p-0 bg-white/10 backdrop-blur-xl hover:bg-yellow-600   shadow-xl"
+            className="w-20 h-20  rounded-full p-0 bg-white/10 backdrop-blur-xl hover:bg-yellow-200    shadow-xl"
           >
             <FaArrowRight className="w-5 h-5 flex justify-center m-auto  text-gray-500" />
           </button>
-          </div>
+          
         </div>
       {/* </div> */}
       {renderSlide(slides[current])}

@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
           {/* الشعار */}
           <div className="flex items-center px-3 ">
             <Link to="/" className=" items-center hidden md:block ">
-              <img className="w-45 h-15 mt-2  " src={logo} alt="Logo desktop" />
+              <img className="w-50 h-15 mt-2  " src={logo} alt="Logo desktop" />
             </Link>
 
             <Link
@@ -219,7 +219,7 @@ const NavBar: React.FC = () => {
           <div className="hidden md:flex items-center ml-6">
             <Link
               to={ROUTES.CONTACT}
-              className="flex items-center gap-2 bg-[#ffcc53] h-20 text-gray-900 font-semibold py-3 px-6 rounded-xl hover:bg-yellow-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="flex items-center gap-2 bg-[#ffcc53] h-20 text-gray-900 font-semibold py-3 px-6 rounded-xl hover:bg-yellow-200  transition-all duration-200 shadow-lg hover:shadow-xl"
               onClick={() => setIsOpen(false)}
             >
               <span>Book An Appointment</span>

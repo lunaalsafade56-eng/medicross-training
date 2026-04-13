@@ -14,4 +14,6 @@
 .animate-slide-in-right { animation: slide-in-right 1s ease-out 0.3s both; } */
 :root{
   font-family: var(--font-sans);
+
+--color-primary:#0a233d;
 }

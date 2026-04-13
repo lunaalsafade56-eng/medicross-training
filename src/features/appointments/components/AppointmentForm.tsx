@@ -1,137 +1,138 @@
-import React, { useState } from 'react';
+
+import Button from "../../../components/ui/Button"
+import useAppointment from "../hooks/useAppointment"
 import { FaCheck } from 'react-icons/fa';
-
-const treatments = [
-  "General Checkup",
-  "Dental",
-  "Cardiology",
-  "Neurology",
-];
-
 const doctors = [
-  "Dr. John Doe",
-  "Dr. Jane Smith",
-  "Dr. Michael Johnson",
-  "Dr. Emily Davis",
-];
+  { id: 1, name: "dr. John Doe" },
+  { id: 2, name: "dr. Jane Smith" },
+  { id: 3, name:"dr.Alex"}
+]
 
-const AppointmentForm: React.FC = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    treatment: '',
-    doctor: '',
-    date: '',
-  });
+const services = [
+  { id: 1, name: "Health Consulting" },
+  { id: 2, name: "dental" },
+  { id: 3, name: "Schedule An Examination" },
+]
 
-  const [isComplete, setIsComplete] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // You can add validation and further submission logic here
-    setIsComplete(true);
-  };
+function AppointmentForm() {
+  const { form, handleChange, handleSubmit,isComplete } = useAppointment()
 
   return (
-    <div className="bg-[#c8e2ee] w-auto rounded-2xl pt-20  max-w-4xl px-6   md:flex-row items-center md:items-start gap-6 ">
-      <div>
+    <section className="  p-8 bg-[#bfddeb] rounded-2xl shadow-xl w-auto  pt-20  max-w-4xl px-6   md:flex-row items-center md:items-start gap-3">
+       <div>
         <h2 className="text-3xl font-semibold col-span-full">Book An Appointment</h2>
-        <p className="text-sm text-gray-600 col-span-full mb-4">
+        <p className="text-sm text-[var(--color-primary)] col-span-full mb-4">
           Appreciate and check your health more often, let us help you do that!
         </p>
 </div>
-  <form onSubmit={handleSubmit} className=" grid grid-cols-1 md:grid-cols-3 gap-4 ">
-        <input
-          type="text"
-          name="fullName"
-          placeholder="Full Name..."
-          value={formData.fullName}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300"
-          required
-        />
-        <select
-          name="treatment"
-          value={formData.treatment}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300"
-          required
-        >
-          <option value="" disabled>Select Treatment</option>
-          {treatments.map(t => (
-            <option key={t} value={t}>{t}</option>
-          ))}
-        </select>
+      <form onSubmit={handleSubmit} className="space-y-6 grid grid-cols-1 md:grid-cols-3 gap-4 ">
+          {/* Name */}
+        <div>
+          <input
+            onChange={handleChange}
+            value={form.name}
+            type="text"
+            name="name"
+            placeholder="name"
+            required
+            className="w-full px-5  h-13.75 border border-gray-300 rounded-xl focus:ring-0 bg-[#e7f2f7]  focus:bg-white transition-all"
+          />
+        </div>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="*Email address..."
-          value={formData.email}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300"
-          required
-        />
-        <select
-          name="doctor"
-          value={formData.doctor}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300"
-          required
-        >
-          <option value="" disabled>Choose doctor</option>
-          {doctors.map(d => (
-            <option key={d} value={d}>{d}</option>
-          ))}
-        </select>
+        {/* Email */}
+        <div>
+          <input
+            onChange={handleChange}
+            value={form.email}
+            type="email"
+            name="email"
+            placeholder="email"
+            required
+            className="w-full px-5  h-13.75 border border-gray-300 rounded-xl focus:ring-0 bg-[#e7f2f7]  focus:bg-white transition-all"
+          />
+        </div>
 
-        <input
-          type="tel"
-          name="phone"
-          placeholder="*Phone number..."
-          value={formData.phone}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300"
-          required
-        />
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          className="p-3 rounded-md border border-gray-300"
-          required
-        />
-        
-     
-         <button
-          type="submit"
-          className="col-span-full md:col-auto bg-gray-950 text-white rounded-full w-32 h-32 flex flex-col justify-center  items-center hover:bg-yellow-400 transition "
+        {/* Phone */}
+        <div>
+          <input
+            onChange={handleChange}
+            value={form.phone}
+            name="phone"
+            type="tel"
+            placeholder="phone"
+            required
+            className="w-full px-5  h-13.75 border border-gray-300 rounded-xl focus:ring-0 bg-[#e7f2f7]  focus:bg-white transition-all"
+          />
+        </div>
+
+        {/* Service */}
+        <div>
+          <select
+            value={form.service}
+            name="service"
+            onChange={handleChange}
+            className="w-full px-5  h-13.75 border border-gray-300 rounded-xl focus:ring-0 bg-[#e7f2f7]  focus:bg-white transition-all"
+          >
+            <option value="">select service</option>
+            {services.map((service, index) => (
+              <option key={index} value={service.name}>
+                {service.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Doctor */}
+        <div>
+          <select
+            value={form.doctor}
+            name="doctor"
+            onChange={handleChange}
+            className="w-full px-5 p-4  h-13.75 border border-gray-300 rounded-xl focus:ring-0 bg-[#e7f2f7]  focus:bg-white transition-all"
+          >
+            <option value="">select doctor</option>
+            {doctors.map((doctor, index) => (
+              <option key={index} value={doctor.name}>
+                {doctor.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Date */}
+        <div>
+          <input
+            onChange={handleChange}
+            value={form.date}
+            name="date"
+            type="date"
+            required
+            className="w-full px-5  h-13.75 border border-gray-300 rounded-xl focus:ring-0 bg-[#e7f2f7]  focus:bg-white  transition-all"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <Button 
+          type="submit" 
+          variant="secondary"
+          disabled={isComplete }
+          className=" bg-[var(--color-primary)] text-white py-3 px-6  font-semibold hover:bg-opacity-90  col-span-full md:col-auto rounded-full w-32 h-32 flex flex-col justify-center  items-center hover:bg-yellow-200 transition"
         >
-          {isComplete ? (
-            <>
-              <FaCheck className="text-green-400 mb-1" size={24} />
-              <span className="text-center text-sm text-white">Complete Appointment</span>
-            </>
-          ) : (
+         {isComplete ? (
+             <>
+               <FaCheck className="text-green-200 mb-1" size={24} />
+               <span className="text-center text-sm text-white">Complete Appointment</span>
+             </>
+           ) : (
             
-       "Complete Appointment"
+        "Complete Appointment"
             
-          )}
-        </button>
+           )}
+        </Button>
       </form>
-        
-</div>
-  );
-};
+    </section>
+  )
+}
 
-export default AppointmentForm;
-
+export default AppointmentForm

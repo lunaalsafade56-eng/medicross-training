@@ -6,7 +6,7 @@ function FindDoctor() {
 <>
 
     <div
-      className="w-auto  h-[400px] md:h-[500px] bg-cover bg-center flex items-center justify-start p-3 text-gray-950 rounded-2xl" 
+      className="w-full  h-100 md:h-125 bg-cover bg-center flex items-center justify-start p-3 text-gray-950 rounded-2xl" 
       style={{ backgroundImage: `url(${backgrounImage})` }}
     >
       <div className="text-left">

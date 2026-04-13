@@ -6,7 +6,9 @@ import ServiceDepartment from "../home/sections/ServiceDepartment"
 import { homeContents } from "../../../src/data/contents/HomeContents";
 import {FaStar} from "react-icons/fa";
 import FindDoctor from "../home/sections/FindDoctor";
-
+import CardsHome from"./sections/CardsHome";
+import AchievementsSection from "../home/sections/AchievementsSection"
+import FourCarousel from "../home/sections/FourCarousel";
 const Home: React.FC = () => {
   return (
     <>
@@ -22,10 +24,10 @@ const Home: React.FC = () => {
                 <p className="text-lg md:text-4xl mb-8 text-gray-200 max-w-2xl  ">
                   {slide.subtitle}
                 </p>
-                <p className="text-lg md:text-2xl mb-8 text-gray-200 max-w-2xl   ">
+                <p className="text-lg md:text-2xl mb-8 text-gray-200 md:w-170 md:text-start w-100 text-center">
                   {slide.text}
                 </p>
-                <button className="bg-yellow-500  hover:bg-yellow-600 text-gray-950 px-8 py-4 rounded-full text-lg font-semibold  transition-all duration-300 hover:scale-105">
+                <button className="bg-[#ffcc53]  hover:bg-yellow-200  text-gray-950 px-8 py-4 rounded-full text-lg font-semibold  transition-all duration-300 hover:scale-105">
                   <span>View All Services</span>
                 </button>
               </div>
@@ -33,7 +35,7 @@ const Home: React.FC = () => {
                 <img
                   src={slide.img}
                   alt=""
-                  className="w-300 h-150 md:h-[500px] object-cover rounded-3xl  overflow-hidden shadow-lg "
+                  className="w-300 h-150 md:h-125 object-cover rounded-3xl  overflow-hidden shadow-lg "
                 />
               </div>
             </div>
@@ -50,7 +52,11 @@ const Home: React.FC = () => {
         
       </div>
       <ServiceDepartment/>
-  
+     <AchievementsSection/>
+      <div className="mx-3">
+  <CardsHome/>
+  <FourCarousel/>
+  </div>
     </>
   );
 };
