@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
           {/* الشعار */}
           <div className="flex items-center px-3 ">
             <Link to="/" className=" items-center hidden md:block ">
-              <img className="w-50 h-15 mt-2  " src={logo} alt="Logo desktop" />
+              <img className="w-auto max-h-12.75 mt-2  " src={logo} alt="Logo desktop" />
             </Link>
 
             <Link

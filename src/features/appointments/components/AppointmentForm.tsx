@@ -19,7 +19,7 @@ function AppointmentForm() {
   const { form, handleChange, handleSubmit,isComplete } = useAppointment()
 
   return (
-    <section className="  p-8 bg-[#bfddeb] rounded-2xl shadow-xl w-auto  pt-20  max-w-4xl px-6   md:flex-row items-center md:items-start gap-3">
+    <section className=" p-8 bg-[#bfddeb] rounded-2xl shadow-xl w-auto  pt-20  max-w-4xl px-6   md:flex-row items-center md:items-start gap-3">
        <div>
         <h2 className="text-3xl font-semibold col-span-full">Book An Appointment</h2>
         <p className="text-sm text-[var(--color-primary)] col-span-full mb-4">
@@ -117,12 +117,12 @@ function AppointmentForm() {
           type="submit" 
           variant="secondary"
           disabled={isComplete }
-          className=" bg-[var(--color-primary)] text-white py-3 px-6  font-semibold hover:bg-opacity-90  col-span-full md:col-auto rounded-full w-32 h-32 flex flex-col justify-center  items-center hover:bg-yellow-200 transition"
+          className=" bg-[var(--color-primary)] text-white py-3 px-6  font-semibold hover:bg-opacity-90   md:col-auto xl:rounded-full rounded-xl w-full h-auto xl:w-32 xl:h-32  flex flex-col justify-center  items-center hover:bg-yellow-200 transition"
         >
          {isComplete ? (
              <>
-               <FaCheck className="text-green-200 mb-1" size={24} />
-               <span className="text-center text-sm text-white">Complete Appointment</span>
+               <FaCheck className="text-green-200 mb-1 " size={24} />
+               <span className="text-center text-white">Complete Appointment</span>
              </>
            ) : (
             

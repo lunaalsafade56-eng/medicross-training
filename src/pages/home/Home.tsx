@@ -1,21 +1,22 @@
-
+import stars from"../../assets/images/sss.png"
 import React from "react";
 import Slider from "../../components/common/Slider";
 import AppointmentForm from "../../features/appointments/components/AppointmentForm";
 import ServiceDepartment from "../home/sections/ServiceDepartment"
 import { homeContents } from "../../../src/data/contents/HomeContents";
-import {FaStar} from "react-icons/fa";
 import FindDoctor from "../home/sections/FindDoctor";
 import CardsHome from"./sections/CardsHome";
 import AchievementsSection from "../home/sections/AchievementsSection"
 import FourCarousel from "../home/sections/FourCarousel";
+import StepLine from "../home/sections/StepLine"
 const Home: React.FC = () => {
+  
   return (
     <>
       <div className="bg-[#0a263f] ">
         <Slider
-          slides={homeContents.slides}
-          renderSlide={(slide) => (
+        slides={homeContents.slides}
+        renderSlider={(slide) => (
             <div className="w-full  flex flex-col md:flex-row  items-center ">
               <div className="w-300 flex flex-col md:w-1/2 justify-center items-center px-2 h-full text-left mb-4">
                 <h1 className="text-xl md:text-6xl font-bold mb-6 drop-shadow-2xl text-white ">
@@ -45,17 +46,19 @@ const Home: React.FC = () => {
           <FindDoctor />
           <AppointmentForm />
         </div>
-        
-          <h2 className="flex justify-center text-center m-auto p-3 text-white">
-            Our patients say: Excellent <FaStar className="text-[#ffcc53] mt-1 mx-1"/> <FaStar className="text-[#ffcc53] mt-1"/><FaStar className="text-[#ffcc53] mt-1"/><FaStar className="text-[#ffcc53] mt-1"/><FaStar className="text-[#ffcc53] mt-1 mx-1"/> Overall Rating 4.7 / 3285 reviews on Zocdoc 
+      
+          <h2 className=" mt-5 xl:flex justify-center py-5 text-white grid grid-cols-1 text-center ">
+            Ourpatientssay:Excellent<img src={stars} alt="stars" className="w-auto h-4 pt-1 xl:mx-3 m-auto flex justify-center " />OverallRating4.7/3285 reviewsonZocdoc 
           </h2>
         
       </div>
       <ServiceDepartment/>
      <AchievementsSection/>
       <div className="mx-3">
+         <FourCarousel/>
   <CardsHome/>
-  <FourCarousel/>
+ 
+  <StepLine/>
   </div>
     </>
   );

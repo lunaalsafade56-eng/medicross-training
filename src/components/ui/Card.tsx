@@ -66,7 +66,7 @@ const Card = ({ title, description, image, number, link,bgColor,button,colorNumb
               <p className="text-gray-600 text-sm" style={{color:colorText||""}}>{description}</p>
             )}
             {button &&(
-                <span className="flex gap-1 "style={{color:colorText||""}}>{button} <FaArrowRight  className="mt-1.5"/></span>
+                <span className="flex gap-1 "style={{color:colorText||""}}>{button} <FaArrowRight className="w-5 h-5 mt-1 px-1 hover:translate-x-2 ease-in-out" /></span>
             )
             }
 

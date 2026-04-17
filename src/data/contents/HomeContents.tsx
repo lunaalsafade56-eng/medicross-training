@@ -1,11 +1,6 @@
  import slide1 from "../../assets/images/h5-2.webp";
  import slide2 from "../../assets/images/Screenshot 2026-04-05 162040.png";
- export interface slide{
-  img:string,
-  title:string,
-  subtitle:string,
-  text:string
- }
+
 export const homeContents = {
   slides: [
     {
@@ -21,4 +16,4 @@ export const homeContents = {
 text:"The healthcare arena there was a felt need of developing new as well as upgrading the existing functioning and processes, consequently develop an institution supported with necessary"
     }
   ]
-} as const;
+} 

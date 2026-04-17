@@ -1,17 +1,12 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState, type ReactNode } from "react";
-export interface slide {
-  img: string;
-  title: string;
-  subtitle: string;
-  text: string;
-}
 
-interface SliderProps<T> {
-  renderSlider: (item: T) => ReactNode;
-  slides: T[];
+
+interface sliderProps<T>{
+    renderSlider:(item:T)=>ReactNode; 
+    slides:T[] ;
 }
-const Slider: React.FC<SliderProps> = ({ renderSlide, slides }) => {
+function Slider<T>({renderSlider, slides}:sliderProps<T>){
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -22,15 +17,13 @@ const Slider: React.FC<SliderProps> = ({ renderSlide, slides }) => {
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
-  // const goToSlide = (index: number) => {
-  //   setCurrent(index);
-  // };
+  
 
   return (
     <div className="relative min-h-screen bg-[#0a263f] flex items-center justify-center overflow-hidden px-3 sm:px-6 lg:px-12 xl:px-16 py-20 lg:py-32">
       
         {/* Prev Button */}
-        <div className="mt-12 sm:block grid grid-cols-2 gap-7 md:block hidden">
+        <div className="mt-12 sm:block  grid-cols-2 gap-7 md:block hidden ">
           
           <button
             onClick={prevSlide}
@@ -49,7 +42,7 @@ const Slider: React.FC<SliderProps> = ({ renderSlide, slides }) => {
           
         </div>
       {/* </div> */}
-      {renderSlide(slides[current])}
+      {renderSlider(slides[current])}
     </div>
   );
 };

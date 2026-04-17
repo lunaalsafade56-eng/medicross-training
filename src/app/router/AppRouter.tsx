@@ -8,8 +8,7 @@ import DoctorsPage from "../../features/doctors/pages/DoctorsPage";
 // import DoctorDetails from '../../features/doctors/pages/DoctorDetails';
 import MainLayout from '../../components/layout/MainLayout';
 import "../../styles/global.css"
-import NavBar from '../../components/layout/NavBar';
- 
+
 
 const AppRouter: React.FC= () => {
   return (
